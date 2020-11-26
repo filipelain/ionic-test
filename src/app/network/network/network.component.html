@@ -1,0 +1,25 @@
+<div>
+    {{ networkStatus?.connected ? 'Online' : 'Offline' }}
+</div>
+<br>
+<div>
+    <h3>QR CODE</h3>
+
+    <ion-content padding>
+        <ion-card *ngIf="createdCode">
+            <ngx-qrcode [value]="createdCode"
+                        [elementType]="elementType"
+                        cssClass="aclass"
+                        errorCorrectionLevel="L"
+
+            ></ngx-qrcode>
+        </ion-card>
+    </ion-content>
+
+</div>
+<div>
+    {{dataAtual}}
+</div>
+<ion-button (click)="ponto()">
+    bater o ponto
+</ion-button>
